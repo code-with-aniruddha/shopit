@@ -8,7 +8,9 @@ const Product = ({ product }) => {
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         {/* <Card.Text>{product.description}</Card.Text> */}
-        <Button variant="primary">Add to cart</Button>
+        <Button variant="primary" disabled={product.stock == 0}>
+          Add to cart
+        </Button>
       </Card.Body>
     </Card>
   );

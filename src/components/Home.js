@@ -5,7 +5,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const Home = () => {
-  const { products } = useContext(ProductContext);
+  const {
+    state: { products },
+  } = useContext(ProductContext);
   return (
     <Row className="g-4">
       {products.map((product) => (
