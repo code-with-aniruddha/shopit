@@ -1,8 +1,5 @@
 import { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -17,29 +14,25 @@ const Filter = () => {
     filterProducts(criteria);
   };
   return (
-    <Navbar expand="lg" bg="secondary" variant="dark">
-      <Container>
-        <Nav className="me-auto">
-          <Form.Check
-            onChange={() => onFilter("stock")}
-            type="checkbox"
-            label="exclude out of stock"
-            checked={checkState.stock}
-          />
-          <Form.Check
-            onChange={() => onFilter("delivery")}
-            type="checkbox"
-            label="fast delivery only"
-            checked={checkState.delivery}
-          />
-        </Nav>
-        <Nav>
-          <Button onClick={() => onFilter("clear")} variant="light">
-            clear filter
-          </Button>
-        </Nav>
-      </Container>
-    </Navbar>
+    <div>
+      <Form.Check
+        onChange={() => onFilter("stock")}
+        type="checkbox"
+        label="exclude out of stock"
+        checked={checkState.stock}
+      />
+      <Form.Check
+        onChange={() => onFilter("delivery")}
+        type="checkbox"
+        label="fast delivery only"
+        checked={checkState.delivery}
+      />
+      <div>
+        <Button onClick={() => onFilter("clear")} variant="light">
+          clear filter
+        </Button>
+      </div>
+    </div>
   );
 };
 
